@@ -1,13 +1,14 @@
 from typing import Any, Dict
-from django.http import HttpRequest
 from django.views.generic import FormView
 from .forms import ContatoForm
+
 from django.contrib import messages
 
 from django.urls import reverse_lazy
 
 from .models import (
-    Servico, Funcionario
+    Servico, Funcionario, Precos, 
+    Recursos
 )
 
 class IndexView(FormView):
@@ -20,6 +21,8 @@ class IndexView(FormView):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['servicos'] = Servico.objects.order_by('?').all()
         context['funcionarios'] = Funcionario.objects.order_by('?').all()
+        context['precos'] = Precos.objects.all()
+        context['recursos'] = Recursos.objects.order_by('?').all()
         return context
     
 

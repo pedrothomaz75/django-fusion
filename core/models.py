@@ -71,3 +71,39 @@ class Funcionario(Base):
         return self.nome
     
     
+class Precos(Base):
+    ICONE_CHOICES = (
+        ('lni-package', 'pacote'),
+        ('lni-drop', 'gota'),
+        ('lni-star', 'estrela'),
+    )
+    preco_plano = models.CharField('Preço', max_length=100)
+    plano = models.CharField('Plano', max_length=20)
+    descricao = models.TextField('Descrição', max_length=200)
+    icone = models.CharField('Icone', max_length=12, choices=ICONE_CHOICES)
+
+    class Meta:
+        verbose_name = 'Preço'
+        verbose_name_plural = 'Preços'
+
+    def __str__(self):
+        return self.plano
+
+class Recursos(Base):
+    ICONE_CHOICES = (
+        ('lni-rocket' , 'foguete'),
+        ('lni-laptop-phone' , 'celular-notebook'),
+        ('lni-cog' , 'engrenagem'),
+        ('lni-leaf' , 'folha'),
+        ('lni-layers' , 'camadas'),
+    )
+    nome = models.CharField('Nome', max_length=100)
+    descricao = models.TextField('Descrição', max_length=200)
+    icone = models.CharField('Icone', max_length=20,choices=ICONE_CHOICES)
+
+    class Meta:
+        verbose_name = 'Recurso'
+        verbose_name_plural = 'Recursos'
+
+        def __str__(self):
+            return self.nome
