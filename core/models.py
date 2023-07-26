@@ -9,4 +9,4 @@ class Base(models.Model):
     class Meta:
         abstract = True
 
-class Ser
+
