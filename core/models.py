@@ -105,5 +105,5 @@ class Recursos(Base):
         verbose_name = 'Recurso'
         verbose_name_plural = 'Recursos'
 
-        def __str__(self):
-            return self.nome
+    def __str__(self):
+        return self.nome
