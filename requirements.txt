@@ -5,6 +5,7 @@ charset-normalizer==3.2.0
 coverage==7.2.7
 cryptography==41.0.2
 defusedxml==0.7.1
+dj-database-url==2.0.0
 dj-static==0.0.6
 Django==4.2.3
 django-stdimage==6.0.1
