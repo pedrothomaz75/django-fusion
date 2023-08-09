@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o10rhuz!fl9xk8)kx947jk-uu9v1_t!z68eof1q7n2owfkkych'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -79,10 +79,6 @@ DATABASES = {
 }
 
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -132,10 +128,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Email de teste console
-# EMAIL_BACKEND  = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND  = 'django.core.mail.backends.console.EmailBackend'
+
 
 """
-
 Email em produção
 
 EMAIL_HOST = 'localhost'
@@ -144,7 +140,6 @@ EMAIL_PORT = 587
 EMAIL_USER_TSL = True
 EMAIL_HOST_PASSWORD = 'fusion'
 DEFAULT_FROM_EMAIL = 'contato@fusion.com.br'
-
 """
 
 LOGOUT_REDIRECT_URL = 'index'
